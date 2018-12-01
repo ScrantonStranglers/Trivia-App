@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 public class Gameplay extends AppCompatActivity {
 
@@ -14,6 +15,13 @@ public class Gameplay extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gameplay);
+
+        Game g = (Game) getIntent().getSerializableExtra("game");
+        Question currQuest = g.getRandomQuestion();
+        String questText = currQuest.getQuestion();
+        TextView text = (TextView) findViewById(R.id.textView3);
+        text.setText(questText);
+
         ImageButton homeButton = (ImageButton) findViewById(R.id.homeButton2);
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
