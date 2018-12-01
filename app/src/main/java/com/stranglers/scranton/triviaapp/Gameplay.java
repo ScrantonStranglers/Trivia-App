@@ -6,10 +6,11 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-public class Gameplay extends AppCompatActivity {
+public class Gameplay extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +22,16 @@ public class Gameplay extends AppCompatActivity {
         String questText = currQuest.getQuestion();
         TextView text = (TextView) findViewById(R.id.textView3);
         text.setText(questText);
+
+        Button ans1 = (Button) findViewById(R.id.a1);
+        Button ans2 = (Button) findViewById(R.id.a2);
+        Button ans3= (Button) findViewById(R.id.a3);
+        Button ans4 = (Button) findViewById(R.id.a4);
+
+        ans1.setOnClickListener(this);
+        ans2.setOnClickListener(this);
+        ans2.setOnClickListener(this);
+        ans3.setOnClickListener(this);
 
         ImageButton homeButton = (ImageButton) findViewById(R.id.homeButton2);
         homeButton.setOnClickListener(new View.OnClickListener() {
@@ -56,4 +67,8 @@ public class Gameplay extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onClick(View v) {
+
+    }
 }
