@@ -1,10 +1,12 @@
 package com.stranglers.scranton.triviaapp;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /* The Game object will have an array list of question objects, as well as information about the current game
 */
-public class Game {
+@SuppressWarnings("serial")
+public class Game implements Serializable {
     private ArrayList<Question> questionList;
     public Game(){
         questionList = new ArrayList<>();
@@ -18,5 +20,8 @@ public class Game {
         return "Game{" +
                 "questionList=" + questionList +
                 '}';
+    }
+    public ArrayList<Question> getQuestions(){
+        return questionList;
     }
 }

@@ -1,8 +1,9 @@
 package com.stranglers.scranton.triviaapp;
 
+import java.io.Serializable;
 import java.util.Arrays;
 
-public class Question {
+public class Question implements Serializable {
     private String category,type,difficulty,question,correct_answer;
     private String[] incorrect_answers;
 

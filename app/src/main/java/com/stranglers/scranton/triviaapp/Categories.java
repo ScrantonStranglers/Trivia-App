@@ -1,8 +1,6 @@
 package com.stranglers.scranton.triviaapp;
 
-import android.app.AlertDialog;
 import android.content.Intent;
-import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,7 +16,7 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-public class Categories extends AppCompatActivity {
+public class Categories extends AppCompatActivity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +29,15 @@ public class Categories extends AppCompatActivity {
                 home();
             }
         });
+        Button comp = (Button) findViewById(R.id.computers);
+        Button general = (Button) findViewById(R.id.general);
+        Button science = (Button) findViewById(R.id.science);
+        Button sport = (Button) findViewById(R.id.sports);
+
+        comp.setOnClickListener(this);
+        general.setOnClickListener(this);
+        science.setOnClickListener(this);
+        sport.setOnClickListener(this);
     }
 
     private void home() {
@@ -85,4 +92,30 @@ public class Categories extends AppCompatActivity {
         }
         return  game;
     }
+    @Override
+    public void onClick(View v){
+       String cat = ((Button) v).getText().toString();
+       Game g;
+
+        switch (cat){
+           case "General":
+               g = jsonToGame(loadFileToString(R.raw.general));
+                break;
+           case "Science and Nature":
+               g = jsonToGame(loadFileToString(R.raw.science));
+               break;
+           case "Sports":
+               g = jsonToGame(loadFileToString(R.raw.sports));
+               break;
+           case "Computers":
+               g = jsonToGame(loadFileToString(R.raw.computers));
+               break;
+           default:
+               Log.e("Hey Guys", "Default");
+               g = jsonToGame(loadFileToString(R.raw.general));
+       }
+        Intent intent = new Intent(this,Confirmation.class);
+        intent.putExtra("game",g);
+        startActivity(intent);
+   }
 }
