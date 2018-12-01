@@ -14,7 +14,7 @@ public class Game implements Serializable {
     public void addQeustion(Question q){
         questionList.add(q);
     }
-
+    private int numCorrect;
     @Override
     public String toString() {
         return "Game{" +
@@ -23,5 +23,11 @@ public class Game implements Serializable {
     }
     public ArrayList<Question> getQuestions(){
         return questionList;
+    }
+    public int getNumCorrect(){
+        return numCorrect;
+    }
+    public void increment(){
+        numCorrect++;
     }
 }
