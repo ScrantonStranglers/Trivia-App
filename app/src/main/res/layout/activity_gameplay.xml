@@ -21,12 +21,15 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="297dp"
-        android:layout_height="267dp"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="65dp"
         android:text="question"
+        android:textAlignment="center"
+        android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="163dp"
@@ -39,7 +42,7 @@
         <Button
             android:id="@+id/a1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="75dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
             android:text="Button"
@@ -49,7 +52,7 @@
         <Button
             android:id="@+id/a2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="75dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
             android:text="Button"
@@ -59,7 +62,7 @@
         <Button
             android:id="@+id/a3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="75dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
             android:text="Button"
@@ -69,13 +72,12 @@
         <Button
             android:id="@+id/a4"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="75dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="76dp"
+            android:layout_marginBottom="64dp"
             android:text="Button"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent" />
 
     </android.support.constraint.ConstraintLayout>
 
