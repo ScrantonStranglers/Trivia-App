@@ -13,7 +13,7 @@ boolean fromMenu;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leaderboard);
         Intent intent = getIntent();
-        ImageButton homeButton = (ImageButton) findViewById(R.id.homeButton);
+        ImageButton homeButton = (ImageButton) findViewById(R.id.homeButton5);
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

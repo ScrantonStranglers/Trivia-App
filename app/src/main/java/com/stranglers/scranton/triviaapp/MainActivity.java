@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         leaderboard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                openLeaderboard();
             }
         });
         newgame.setOnClickListener(new View.OnClickListener() {
