@@ -22,7 +22,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button newgame = (Button) findViewById(R.id.newgame);
-        Button leaderboard = (Button) findViewById(R.id.leader);
+        final Button leaderboard = (Button) findViewById(R.id.leader);
+        leaderboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
         newgame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -35,6 +41,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void openCategories(){
         Intent intent = new Intent(this,Categories.class);
+        startActivity(intent);
+    }
+
+    private void openLeaderboard(){
+        Intent intent = new Intent(this,leaderboard.class);
+        intent.putExtra("fromMenu",true);
         startActivity(intent);
     }
 }

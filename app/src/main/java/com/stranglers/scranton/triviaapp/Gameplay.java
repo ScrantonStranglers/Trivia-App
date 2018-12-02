@@ -88,12 +88,20 @@ Game g;
                 if(questNum<9){
                     nextQuestion(g);
                 }else{
-                    selected.setText("Howdy");
+                    goToResults();
                 }
             }
         }, 800);
 
     }
+
+    private void goToResults() {
+        Intent intent = new Intent(this,results.class);
+        intent.putExtra("numRight",correctNum);
+        intent.putExtra("game",g);
+        startActivity(intent);
+    }
+
     private void nextQuestion(Game g){
         Question currQuest = g.getRandomQuestion(questNum);
         currentQuestion = currQuest;

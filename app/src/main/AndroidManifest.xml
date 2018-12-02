@@ -17,8 +17,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".Categories" />
-        <activity android:name=".Confirmation"></activity>
-        <activity android:name=".Gameplay"></activity>
+        <activity android:name=".Confirmation" />
+        <activity android:name=".Gameplay" />
+        <activity android:name=".results" />
+        <activity android:name=".leaderboard"></activity>
     </application>
 
 </manifest>
