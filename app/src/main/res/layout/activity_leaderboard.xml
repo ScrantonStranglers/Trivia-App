@@ -6,4 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".leaderboard">
 
+    <ImageButton
+        android:id="@+id/homeButton5"
+        android:layout_width="86dp"
+        android:layout_height="69dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:cropToPadding="true"
+        android:scaleType="centerCrop"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@mipmap/dwight2" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="405dp"
+        android:layout_height="283dp"
+        android:layout_marginTop="1dp"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/EXLEADERBOARD" />
 </android.support.constraint.ConstraintLayout>
