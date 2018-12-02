@@ -1,12 +1,19 @@
 package com.stranglers.scranton.triviaapp;
 
+import android.util.Log;
+
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Random;
 
 public class Question implements Serializable {
     private String category,type,difficulty,question,correct_answer;
     private String[] incorrect_answers;
 
+    private ArrayList<String> allAnswers;
     public String getCategory() {
         return category;
     }
@@ -18,8 +25,19 @@ public class Question implements Serializable {
         this.question = question;
         this.correct_answer = correct_answer;
         this.incorrect_answers = incorrect_answers;
+        allAnswers = new ArrayList<>();
+        allAnswers.add(correct_answer);
+
+            for (int i = 0; i < 3; i++) {
+                allAnswers.add(incorrect_answers[i]);
+            }
+
     }
 
+    public ArrayList<String> getScrambledAnswers(){
+         Collections.shuffle(allAnswers);
+         return allAnswers;
+    }
     public void setCategory(String category) {
         this.category = category;
     }

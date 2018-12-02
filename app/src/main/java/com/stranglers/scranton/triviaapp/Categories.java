@@ -96,26 +96,25 @@ public class Categories extends AppCompatActivity implements View.OnClickListene
     public void onClick(View v){
        String cat = ((Button) v).getText().toString();
        Game g;
-
-        switch (cat){
-           case "General":
-               g = jsonToGame(loadFileToString(R.raw.general));
-                break;
-           case "Science and Nature":
-               g = jsonToGame(loadFileToString(R.raw.science));
-               break;
-           case "Sports":
-               g = jsonToGame(loadFileToString(R.raw.sports));
-               break;
-           case "Computers":
-               g = jsonToGame(loadFileToString(R.raw.computers));
-               break;
-           default:
-               Log.e("Hey Guys", "Default");
-               g = jsonToGame(loadFileToString(R.raw.general));
-       }
-        Intent intent = new Intent(this,Confirmation.class);
-        intent.putExtra("game",g);
-        startActivity(intent);
-   }
+            switch (cat) {
+                case "General":
+                    g = jsonToGame(loadFileToString(R.raw.general));
+                    break;
+                case "Science and Nature":
+                    g = jsonToGame(loadFileToString(R.raw.science));
+                    break;
+                case "Sports":
+                    g = jsonToGame(loadFileToString(R.raw.sports));
+                    break;
+                case "Computers":
+                    g = jsonToGame(loadFileToString(R.raw.computers));
+                    break;
+                default:
+                    Log.e("Hey Guys", "Default");
+                    g = jsonToGame(loadFileToString(R.raw.general));
+            }
+            Intent intent = new Intent(this, Confirmation.class);
+            intent.putExtra("game", g);
+            startActivity(intent);
+    }
 }

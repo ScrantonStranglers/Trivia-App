@@ -15,9 +15,9 @@ public class Game implements Serializable {
     public void addQeustion(Question q){
         questionList.add(q);
     }
-    public Question getRandomQuestion(){
+    public Question getRandomQuestion(int limit){
         Random r = new Random();
-        int randNum = r.nextInt(50);
+        int randNum = r.nextInt(50-limit);
         Question randQuest = questionList.get(randNum);
         questionList.remove(randQuest);
         return randQuest;
