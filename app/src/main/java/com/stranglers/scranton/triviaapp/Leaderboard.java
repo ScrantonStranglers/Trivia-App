@@ -71,7 +71,7 @@ public class Leaderboard extends AppCompatActivity {
                     name.setTextColor(Color.WHITE);
                     TextView cat = createCell(entry.getCategory());
                     cat.setTextColor(Color.WHITE);
-                    TextView score = createCell(entry.getCategory());
+                    TextView score = createCell(Integer.toString(entry.getScore()));
                     score.setTextColor(Color.WHITE);
 
                     row.addView(name);
