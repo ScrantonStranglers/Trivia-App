@@ -96,7 +96,7 @@ Game g;
     }
 
     private void goToResults() {
-        Intent intent = new Intent(this,results.class);
+        Intent intent = new Intent(this,Results.class);
         intent.putExtra("numRight",correctNum);
         intent.putExtra("game",g);
         startActivity(intent);

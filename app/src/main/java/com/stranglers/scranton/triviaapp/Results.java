@@ -1,6 +1,7 @@
 package com.stranglers.scranton.triviaapp;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,9 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
-public class results extends AppCompatActivity {
+public class Results extends AppCompatActivity {
     Game g;
     int result;
     int adjustedScore;
@@ -50,13 +49,18 @@ public class results extends AppCompatActivity {
     }
 
     private void addToLeaderboard() {
-        Intent intent = new Intent(this,leaderboard.class);
-        intent.putExtra("category",g.getQuestions().get(0).getCategory());
+        Intent intent = new Intent(this,Leaderboard.class);
+        final String category = g.getQuestions().get(0).getCategory();
         EditText nameEnter = findViewById(R.id.editText);
-        String name = nameEnter.getText().toString();
-        intent.putExtra("name",name);
-        intent.putExtra("score",adjustedScore);
-        intent.putExtra("fromMenu",false);
+        final String name = nameEnter.getText().toString();
+        final LeaderboardRepository leaderboardRepository = new LeaderboardRepository(getApplicationContext());
+        new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... voids) {
+                leaderboardRepository.insertEntry(name, category, adjustedScore);
+                return null;
+            }
+        }.execute();
         startActivity(intent);
     }
 }
