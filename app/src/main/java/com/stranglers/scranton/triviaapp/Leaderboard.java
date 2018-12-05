@@ -1,6 +1,7 @@
 package com.stranglers.scranton.triviaapp;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
@@ -42,9 +43,17 @@ public class Leaderboard extends AppCompatActivity {
 
     public void constructTable() {
         TableRow row = new TableRow(getApplicationContext());
-        row.addView(createHeaderCell("User Name"));
-        row.addView(createHeaderCell("Category"));
-        row.addView(createHeaderCell("Score"));
+
+        TextView name = createHeaderCell("User Name");
+        name.setTextColor(Color.WHITE);
+        TextView cat = createHeaderCell("Category");
+        cat.setTextColor(Color.WHITE);
+        TextView score = createHeaderCell("Score");
+        score.setTextColor(Color.WHITE);
+
+        row.addView(name);
+        row.addView(cat);
+        row.addView(score);
         tableLayout.addView(row);
         final LeaderboardRepository leaderboardRepository = new LeaderboardRepository(getApplicationContext());
         new AsyncTask<Void, Void, List<LeaderboardEntry>>() {
@@ -56,10 +65,18 @@ public class Leaderboard extends AppCompatActivity {
             @Override
             protected void onPostExecute(List<LeaderboardEntry> entries) {
                 for (LeaderboardEntry entry : entries) {
+
                     TableRow row = new TableRow(getApplicationContext());
-                    row.addView(createCell(entry.getUsername()));
-                    row.addView(createCell(entry.getCategory()));
-                    row.addView(createCell(Integer.toString(entry.getScore())));
+                    TextView name = createCell(entry.getUsername());
+                    name.setTextColor(Color.WHITE);
+                    TextView cat = createCell(entry.getCategory());
+                    cat.setTextColor(Color.WHITE);
+                    TextView score = createCell(entry.getCategory());
+                    score.setTextColor(Color.WHITE);
+
+                    row.addView(name);
+                    row.addView(cat);
+                    row.addView(score);
                     tableLayout.addView(row);
                 }
             }
