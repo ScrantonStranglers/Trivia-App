@@ -19,8 +19,8 @@
         <activity android:name=".Categories" />
         <activity android:name=".Confirmation" />
         <activity android:name=".Gameplay" />
-        <activity android:name=".results" />
-        <activity android:name=".leaderboard"></activity>
+        <activity android:name=".Results" />
+        <activity android:name=".Leaderboard"></activity>
     </application>
 
 </manifest>
